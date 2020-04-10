@@ -56,11 +56,10 @@ const App = props => {
             screenOptions={{
               headerStyle: {
                 backgroundColor: '#076335',
-                borderBottomColor: 'black',
               },
               headerTintColor: 'white',
             }}>
-            <Stack.Screen name="hey" component={BottomTabNavigator} />
+            <Stack.Screen name="Scorecard" component={BottomTabNavigator} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
