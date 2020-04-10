@@ -13,9 +13,14 @@ const styles = StyleSheet.create({
   view: {
     backgroundColor: '#076335',
     flex: 1,
+    borderWidth: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     color: 'white',
+    fontSize: 20,
+    fontWeight: '600',
   },
 });
 
