@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Score = (props) => {
+const Score = props => {
   return (
-    <View style={styles.view}>
+    <TouchableOpacity
+      style={styles.view}
+      onPress={() => props.updateModalVisibility(true)}>
       <Text style={styles.text}>{props.text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
