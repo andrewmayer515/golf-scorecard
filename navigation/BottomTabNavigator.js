@@ -5,6 +5,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import LinksScreen from '../screens/LinksScreen';
 import Scorecard from '../screens/Scorecard';
 
+import { colors } from '../constants';
+
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
 
@@ -18,7 +20,7 @@ export default function BottomTabNavigator({ navigation, route }) {
     <BottomTab.Navigator
       initialRouteName={INITIAL_ROUTE_NAME}
       tabBarOptions={{
-        activeTintColor: '#076335',
+        activeTintColor: colors.darkestGreen,
       }}>
       <BottomTab.Screen
         name="Scorecard"

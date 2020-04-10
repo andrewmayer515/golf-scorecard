@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Hole = (props) => {
+import { colors } from '../../constants';
+
+const Hole = props => {
   return (
     <View style={styles.view}>
       <Text style={styles.text}>{props.text}</Text>
@@ -12,7 +14,7 @@ const Hole = (props) => {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: '#42c885',
+    backgroundColor: colors.lightGreen,
     borderWidth: 0.5,
     justifyContent: 'center',
     alignItems: 'center',

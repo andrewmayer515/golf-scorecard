@@ -56,6 +56,7 @@ const App = props => {
             screenOptions={{
               headerStyle: {
                 backgroundColor: '#076335',
+                shadowColor: 'transparent',
               },
               headerTintColor: 'white',
             }}>
