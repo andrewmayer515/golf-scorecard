@@ -1,11 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Score = ({ hole, scoreCellSelected, text }) => {
+const Score = ({ scoreCellSelected, text }) => {
   return (
-    <TouchableOpacity
-      style={styles.view}
-      onPress={() => scoreCellSelected(hole)}>
+    <TouchableOpacity style={styles.view} onPress={() => scoreCellSelected()}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );

@@ -4,7 +4,7 @@ import _times from 'lodash.times';
 
 import { colors } from '../../constants';
 
-const ScorePicker = ({ updateModalVisibility, updateScore, selectedHole }) => {
+const ScorePicker = ({ updateModalVisibility, updateScore }) => {
   return (
     <View style={styles.modal}>
       <View style={styles.container}>
@@ -12,7 +12,7 @@ const ScorePicker = ({ updateModalVisibility, updateScore, selectedHole }) => {
           <TouchableOpacity
             style={styles.score}
             key={number}
-            onPress={() => updateScore(number + 1, selectedHole)}>
+            onPress={() => updateScore(number + 1)}>
             <Text style={styles.text}>{number + 1}</Text>
           </TouchableOpacity>
         ))}
@@ -20,7 +20,7 @@ const ScorePicker = ({ updateModalVisibility, updateScore, selectedHole }) => {
       <View style={styles.buttons}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => updateScore(null, selectedHole)}>
+          onPress={() => updateScore(null)}>
           <Text style={styles.buttonText}>Clear</Text>
         </TouchableOpacity>
         <TouchableOpacity

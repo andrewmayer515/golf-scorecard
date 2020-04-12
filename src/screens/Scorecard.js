@@ -13,37 +13,40 @@ import Score from '../components/scorecard/Score';
 import Total from '../components/scorecard/Total';
 import ScorePicker from '../components/scorecard/ScorePicker';
 
+import { PLAYERS } from '../constants';
+
 // Temp data mock
 import data from '../../mocks/scorecard.json';
+
+const getTotal = (scoreData, player) => {
+  return _reduce(
+    scoreData,
+    (sum, index) => {
+      return sum + index[player];
+    },
+    0
+  );
+};
 
 const Scorecard = () => {
   const [isModalVisible, updateModalVisibility] = useState(false);
   const [scoreData, updateScoreData] = useState(data.scorecard);
   const [selectedHole, updateSelectedHole] = useState(null);
-  const [total, updateTotal] = useState(null);
+  const [selectedPlayer, updateSelectedPlayer] = useState();
 
-  const updateScore = (score, hole) => {
+  const updateScore = (score, hole, player) => {
     const copy = _clone(scoreData);
     const index = _findIndex(copy, { hole });
-    copy[index].value = score;
+    copy[index][player] = score;
 
     updateModalVisibility(false);
     updateScoreData(copy);
   };
 
-  const scoreCellSelected = hole => {
+  const scoreCellSelected = (hole, player) => {
     updateModalVisibility(true);
     updateSelectedHole(hole);
-  };
-
-  const getTotal = () => {
-    return _reduce(
-      scoreData,
-      (sum, index) => {
-        return sum + index.value;
-      },
-      0
-    );
+    updateSelectedPlayer(player);
   };
 
   return (
@@ -66,19 +69,34 @@ const Scorecard = () => {
         <Header text="Andrew"></Header>
         {_map(scoreData, data => (
           <Score
-            text={data.value}
-            scoreCellSelected={scoreCellSelected}
+            text={data.player1}
+            scoreCellSelected={() =>
+              scoreCellSelected(data.hole, PLAYERS.PLAYER1)
+            }
             key={data.hole}
-            hole={data.hole}
           />
         ))}
-        <Total text={getTotal()} />
+        <Total text={getTotal(scoreData, PLAYERS.PLAYER1)} />
+      </View>
+      <View style={styles.score}>
+        <Header text="Beth"></Header>
+        {_map(scoreData, data => (
+          <Score
+            text={data.player2}
+            scoreCellSelected={() =>
+              scoreCellSelected(data.hole, PLAYERS.PLAYER2)
+            }
+            key={data.hole}
+          />
+        ))}
+        <Total text={getTotal(scoreData, PLAYERS.PLAYER2)} />
       </View>
       <Modal isVisible={isModalVisible} style={styles.modal}>
         <ScorePicker
           updateModalVisibility={updateModalVisibility}
-          selectedHole={selectedHole}
-          updateScore={updateScore}
+          updateScore={number =>
+            updateScore(number, selectedHole, selectedPlayer)
+          }
         />
       </Modal>
     </View>
