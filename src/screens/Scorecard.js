@@ -11,7 +11,7 @@ import Hole from '../components/Hole';
 import Par from '../components/Par';
 import Score from '../components/Score';
 import Total from '../components/Total';
-import ScorePicker from '../components/ScorePicker';
+import ScorePickerModal from '../components/ScorePickerModal';
 
 import { PLAYERS } from '../constants';
 
@@ -91,14 +91,13 @@ const Scorecard = () => {
         ))}
         <Total text={getTotal(scoreData, PLAYERS.PLAYER2)} />
       </View>
-      <Modal isVisible={isModalVisible} style={styles.modal}>
-        <ScorePicker
-          updateModalVisibility={updateModalVisibility}
-          updateScore={number =>
-            updateScore(number, selectedHole, selectedPlayer)
-          }
-        />
-      </Modal>
+      <ScorePickerModal
+        isVisible={isModalVisible}
+        updateModalVisibility={updateModalVisibility}
+        updateScore={number =>
+          updateScore(number, selectedHole, selectedPlayer)
+        }
+      />
     </View>
   );
 };
@@ -116,9 +115,6 @@ const styles = StyleSheet.create({
   },
   score: {
     flex: 1,
-  },
-  modal: {
-    marginHorizontal: 60,
   },
 });
 
