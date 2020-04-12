@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
 import _times from 'lodash.times';
 
+import { colors } from '../../constants';
+
 const ScorePicker = ({ updateModalVisibility, updateScore, selectedHole }) => {
   return (
     <View style={styles.modal}>
@@ -16,12 +18,16 @@ const ScorePicker = ({ updateModalVisibility, updateScore, selectedHole }) => {
         ))}
       </View>
       <View style={styles.buttons}>
-        <Button
-          title="Clear"
-          onPress={() => updateScore(null, selectedHole)}></Button>
-        <Button
-          title="Close"
-          onPress={() => updateModalVisibility(false)}></Button>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => updateScore(null, selectedHole)}>
+          <Text style={styles.buttonText}>Clear</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => updateModalVisibility(false)}>
+          <Text style={styles.buttonText}>Close</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -51,7 +57,17 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 10,
+    marginTop: 15,
+  },
+  button: {
+    backgroundColor: colors.darkestGreen,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 15,
   },
 });
 
