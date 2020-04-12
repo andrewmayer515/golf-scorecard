@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
 import _times from 'lodash.times';
 
-const ScorePicker = props => {
+const ScorePicker = ({ updateModalVisibility }) => {
   return (
     <View style={styles.modal}>
       <View style={styles.container}>
@@ -12,7 +12,7 @@ const ScorePicker = props => {
           </TouchableOpacity>
         ))}
       </View>
-      <View>
+      <View style={styles.buttons}>
         <Button
           title="Cancel"
           onPress={() => updateModalVisibility(false)}></Button>
@@ -27,20 +27,28 @@ const ScorePicker = props => {
 const styles = StyleSheet.create({
   modal: {
     backgroundColor: 'white',
+    paddingTop: 10,
+    paddingBottom: 15,
+    borderRadius: 20,
   },
   container: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   score: {
     flexDirection: 'row',
     width: 100,
-    flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
   },
   text: {
-    fontSize: 20,
-    flexWrap: 'wrap',
+    fontSize: 30,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 10,
   },
 });
 

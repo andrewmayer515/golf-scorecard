@@ -45,7 +45,7 @@ const Scorecard = () => {
         <Total text="9" />
       </View>
       <Modal isVisible={isModalVisible}>
-        <ScorePicker />
+        <ScorePicker updateModalVisibility={updateModalVisibility} />
       </Modal>
     </View>
   );
