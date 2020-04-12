@@ -1,0 +1,49 @@
+{
+  "scorecard": [
+    {
+      "hole": 1,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 2,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 3,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 4,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 5,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 6,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 7,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 8,
+      "par": 3,
+      "value": null
+    },
+    {
+      "hole": 9,
+      "par": 3,
+      "value": null
+    }
+  ]
+}

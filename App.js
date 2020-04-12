@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import useLinking from './src/navigation/useLinking';
+import { colors } from './src/constants';
 
 const Stack = createStackNavigator();
 
@@ -55,7 +56,7 @@ const App = props => {
           <Stack.Navigator
             screenOptions={{
               headerStyle: {
-                backgroundColor: '#076335',
+                backgroundColor: colors.darkestGreen,
                 shadowColor: 'transparent',
               },
               headerTintColor: 'white',
