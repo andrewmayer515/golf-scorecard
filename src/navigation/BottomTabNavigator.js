@@ -10,7 +10,19 @@ import { colors } from '../constants';
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
 
-export default function BottomTabNavigator({ navigation, route }) {
+const getHeaderTitle = route => {
+  const routeName =
+    route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
+
+  switch (routeName) {
+    case 'Scorecard':
+      return 'Scorecard';
+    case 'Analytics':
+      return 'Analytics';
+  }
+};
+
+const BottomTabNavigator = ({ navigation, route }) => {
   // Set the header title on the parent stack navigator depending on the
   // currently active tab. Learn more in the documentation:
   // https://reactnavigation.org/docs/en/screen-options-resolution.html
@@ -38,22 +50,12 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           title: 'Analytics',
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} name="md-book" />
+            <TabBarIcon focused={focused} name="md-analytics" />
           ),
         }}
       />
     </BottomTab.Navigator>
   );
-}
+};
 
-function getHeaderTitle(route) {
-  const routeName =
-    route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
-
-  switch (routeName) {
-    case 'Scorecard':
-      return 'Scorecard';
-    case 'Analytics':
-      return 'Analytics';
-  }
-}
+export default BottomTabNavigator;

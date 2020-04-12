@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { colors } from '../constants';
 
-export default function TabBarIcon(props) {
+const TabBarIcon = props => {
   return (
     <Ionicons
       name={props.name}
@@ -12,4 +12,6 @@ export default function TabBarIcon(props) {
       color={props.focused ? colors.tabIconSelected : colors.tabIconDefault}
     />
   );
-}
+};
+
+export default TabBarIcon;
