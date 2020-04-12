@@ -6,12 +6,12 @@ import _findIndex from 'lodash.findindex';
 import _clone from 'lodash.clone';
 import _reduce from 'lodash.reduce';
 
-import Header from '../components/scorecard/Header';
-import Hole from '../components/scorecard/Hole';
-import Par from '../components/scorecard/Par';
-import Score from '../components/scorecard/Score';
-import Total from '../components/scorecard/Total';
-import ScorePicker from '../components/scorecard/ScorePicker';
+import Header from '../components/Header';
+import Hole from '../components/Hole';
+import Par from '../components/Par';
+import Score from '../components/Score';
+import Total from '../components/Total';
+import ScorePicker from '../components/ScorePicker';
 
 import { PLAYERS } from '../constants';
 

@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import * as React from 'react';
 
-import { colors } from '../constants';
+import { colors } from '../../constants';
 
 const TabBarIcon = props => {
   return (
