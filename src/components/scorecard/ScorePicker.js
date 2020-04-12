@@ -38,15 +38,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 10,
     paddingBottom: 15,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   score: {
     flexDirection: 'row',
-    width: 100,
+    width: 70,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     marginTop: 15,
   },
   button: {
@@ -64,6 +66,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 10,
+    marginHorizontal: 15,
   },
   buttonText: {
     color: 'white',

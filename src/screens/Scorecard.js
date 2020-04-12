@@ -74,7 +74,7 @@ const Scorecard = () => {
         ))}
         <Total text={getTotal()} />
       </View>
-      <Modal isVisible={isModalVisible}>
+      <Modal isVisible={isModalVisible} style={styles.modal}>
         <ScorePicker
           updateModalVisibility={updateModalVisibility}
           selectedHole={selectedHole}
@@ -98,6 +98,9 @@ const styles = StyleSheet.create({
   },
   score: {
     flex: 1,
+  },
+  modal: {
+    marginHorizontal: 60,
   },
 });
 
