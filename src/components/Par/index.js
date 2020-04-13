@@ -11,7 +11,7 @@ const Par = ({ scoreData }) => {
     <View style={styles.container}>
       <Header text="Par"></Header>
       {_map(scoreData, data => (
-        <View style={styles.view}>
+        <View key={data.hole} style={styles.view}>
           <Text style={styles.text}>{data.par}</Text>
         </View>
       ))}

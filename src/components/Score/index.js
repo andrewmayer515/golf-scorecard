@@ -22,6 +22,7 @@ const Score = ({ scoreCellSelected, player, header, scoreData }) => {
       <Header text={header}></Header>
       {_map(scoreData, data => (
         <TouchableOpacity
+          key={data.hole}
           style={styles.view}
           onPress={() => scoreCellSelected(data.hole, player)}>
           <Text style={styles.text}>{data[player]}</Text>
